@@ -1,6 +1,7 @@
 /* CSS CUSTOM PROPERTIES */
 
 :root {
+  --clr-primary-500: hsl(158, 36%, 20%);
   --clr-primary-400: hsl(158, 36%, 37%);
   --clr-secondary-200: hsl(30, 38%, 92%);
 
@@ -116,12 +117,31 @@ body {
 }
 
 .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
     cursor: pointer;
-    padding: .5em 1.5em;
+    padding: .75em 1.5em;
     border: none;
+    border-radius: .375rem;
     text-decoration: none;
     background-color: var(--clr-primary-400);
     color: var(--clr-neutral-100);
+    font-weight: var(--fw-regular);
+    font-size: .875rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--clr-primary-500);
+}
+
+.btn[data-icon="shopping-cart"]::before {
+  content: "";
+  background-image: url(images/icon-cart.svg);
+  width: 15px;
+  height: 16px;
 }
 
 /* PRODUCT STYLES */
@@ -129,10 +149,21 @@ body {
 .product__card {
   --content-padding: 1.5rem; /* local scope */
   --content-spacing: 1rem;  /* local scope */
+  display: grid;
+  max-width: 37.5rem;
   background-color: var(--clr-neutral-100);
   border-radius: 0.7rem;
   overflow: hidden;
 }
+
+@media (min-width: 37.5rem) {
+    .product__card {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+
 
 .product__content {
   display: grid;
