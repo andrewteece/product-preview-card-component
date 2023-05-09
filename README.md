@@ -36,6 +36,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- BEM naming
 
 ### Useful resources
 
