@@ -43,7 +43,7 @@ body {
     5. Improve text rendering
   */
 body {
-  line-height: 1.5;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 /*
@@ -78,6 +78,9 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+h1, h2, h3 {
+    line-height: 1;
+}
 
 /* GENERAL STYLES */
 
@@ -99,6 +102,26 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap; /* used to prevent overflow */
+  align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.btn {
+    cursor: pointer;
+    padding: .5em 1.5em;
+    border: none;
+    text-decoration: none;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
 }
 
 /* PRODUCT STYLES */
@@ -115,4 +138,23 @@ body {
   display: grid;
   gap: var(--content-spacing);
   padding: var(--content-padding);
+}
+
+.product__category {
+    font-size: .8125rem;
+    text-transform: uppercase;
+    letter-spacing: .375rem;
+}
+
+.product__title {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-900);
+}
+
+.product__sale-price {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-primary-400);
 }
